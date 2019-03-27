@@ -1,0 +1,67 @@
+{
+  "name": "base-es6-class",
+  "version": "1.0.0",
+  "description": "Base ES6 class.",
+  "main": "baseclass.js",
+  "scripts": {
+    "test": "npm run lint && npm run coverage && npm audit",
+    "lint": "semistandard --fix",
+    "mocha": "mocha --opts mocha.opts",
+    "coverage": "nyc mocha --opts mocha.opts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnielsen1965/base-es6-class.git"
+  },
+  "keywords": [
+    "javascript",
+    "es6",
+    "class",
+    "base",
+    "example",
+    "standard"
+  ],
+  "author": "Bryan Nielsen <bnielsen1965@gmail.com> (https://github.com/bnielsen1965)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "semistandard": "^13.0.1"
+  },
+  "semistandard": {
+    "ignore": [
+      "public/",
+      "test/"
+    ],
+    "env": [
+      "mocha"
+    ],
+    "globals": []
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "Xlines": 99,
+    "Xstatements": 99,
+    "Xfunctions": 99,
+    "Xbranches": 99,
+    "include": [
+      "**/*.js"
+    ],
+    "exclude": [
+      "coverage",
+      "coverage-tmp",
+      "public",
+      "test"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true,
+    "temp-dir": "./coverage-tmp",
+    "report-dir": "./coverage"
+  }
+}
